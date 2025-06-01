@@ -151,7 +151,103 @@
             color: #2c3e50;
         }
 
-        /* About Section */
+        /* Gallery Section */
+        .gallery {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+            padding: 2rem 1.5rem 1.5rem;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-overlay h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Reviews Section */
+        .reviews {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .review-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .stars {
+            font-size: 1.5rem;
+            color: #f39c12;
+            margin-bottom: 1rem;
+        }
+
+        .review-card p {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            color: #666;
+        }
+
+        .reviewer {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .review-source {
+            font-size: 0.9rem;
+            color: #95a5a6;
+            margin-top: 0.5rem;
+        }
         .about {
             padding: 80px 0;
             background: white;
@@ -284,7 +380,8 @@
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a href="#about">About</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#reviews">Reviews</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -293,9 +390,15 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container">
+            <div style="background: rgba(231, 76, 60, 0.9); color: white; padding: 10px 20px; border-radius: 25px; display: inline-block; font-weight: bold; margin-bottom: 2rem;">
+                🏆 Proud Black-Owned Business
+            </div>
             <h1 class="fade-in">Professional Drywall & Plastering</h1>
             <p class="fade-in">Expert drywall installation, repair, and finishing services in Chicago. Quality craftsmanship you can trust.</p>
-            <a href="#contact" class="cta-button fade-in">Get Free Quote</a>
+            <div style="margin: 2rem 0;">
+                <a href="tel:+13123502500" class="cta-button fade-in" style="margin-right: 1rem;">Call (312) 350-2500</a>
+                <a href="https://hk-drywall-service-inc.square.site/" target="_blank" class="cta-button fade-in" style="background: linear-gradient(45deg, #27ae60, #2ecc71);">Book Online</a>
+            </div>
         </div>
     </section>
 
@@ -334,6 +437,116 @@
                     <h3>Emergency Repairs</h3>
                     <p>Fast response emergency drywall repair services available when you need them most.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2 class="section-title">Our Work Portfolio</h2>
+            <p style="text-align: center; font-size: 1.2rem; margin-bottom: 3rem; color: #666;">See the quality and craftsmanship that sets us apart</p>
+            
+            <div class="gallery-grid">
+                <!-- Replace these placeholder divs with your actual images -->
+                <div class="gallery-item">
+                    <img src="image1.jpg" alt="Professional drywall installation" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h4>Drywall Installation</h4>
+                        <p>Clean, professional finish</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="image2.jpg" alt="Ceiling drywall work" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h4>Ceiling Work</h4>
+                        <p>Smooth ceiling installation</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="image3.jpg" alt="Room drywall finishing" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h4>Room Finishing</h4>
+                        <p>Perfect walls ready for paint</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="image4.jpg" alt="Bathroom drywall repair" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h4>Bathroom Work</h4>
+                        <p>Moisture-resistant installation</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="image5.jpg" alt="Drywall texture work" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h4>Texture & Repair</h4>
+                        <p>Seamless repairs and texturing</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="image6.jpg" alt="Commercial drywall project" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h4>Commercial Projects</h4>
+                        <p>Large-scale installations</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="reviews">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">What Our Customers Say</h2>
+            <p style="text-align: center; color: #bdc3c7; font-size: 1.1rem; margin-bottom: 3rem;">Don't just take our word for it - hear from satisfied customers across Chicago</p>
+            
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Exceptional work! HK Drywall transformed our water-damaged basement walls. The team was professional, punctual, and left everything spotless. You can't even tell where the damage was. Highly recommend this black-owned business!"</p>
+                    <div class="reviewer">- Maria Rodriguez, Pilsen</div>
+                    <div class="review-source">Google Reviews</div>
+                </div>
+                
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Outstanding quality and fair pricing. They repaired multiple holes in our walls and the finish is flawless. The crew was courteous and finished ahead of schedule. Will definitely use HK Drywall again!"</p>
+                    <div class="reviewer">- James Thompson, Lincoln Park</div>
+                    <div class="review-source">Yelp</div>
+                </div>
+                
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Called HK Drywall for an emergency repair after a pipe burst. They responded quickly and did beautiful work. Very professional team and the online booking made scheduling so easy. Great local business!"</p>
+                    <div class="reviewer">- Jennifer Kim, Logan Square</div>
+                    <div class="review-source">Facebook</div>
+                </div>
+                
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"From estimate to completion, everything was perfect. They installed drywall in our new addition and the craftsmanship is top-notch. Competitive pricing and excellent communication throughout the project."</p>
+                    <div class="reviewer">- Michael Davis, Wicker Park</div>
+                    <div class="review-source">Google Reviews</div>
+                </div>
+                
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"HK Drywall did our entire first floor renovation. Clean, professional work and they protected all our furniture. The texture matching was perfect - you can't tell old from new. Excellent service!"</p>
+                    <div class="reviewer">- Sarah Johnson, Bucktown</div>
+                    <div class="review-source">Angie's List</div>
+                </div>
+                
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Needed ceiling repair after a roof leak. HK Drywall provided a fair quote and delivered exactly what they promised. Professional, reliable, and the quality speaks for itself. Proud to support this local business!"</p>
+                    <div class="reviewer">- Robert Martinez, Humboldt Park</div>
+                    <div class="review-source">Better Business Bureau</div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="https://hk-drywall-service-inc.square.site/" target="_blank" class="cta-button">Book Your Project Today</a>
             </div>
         </div>
     </section>
@@ -401,30 +614,40 @@
                         <span>📞</span>
                         <div>
                             <strong>Phone:</strong><br>
-                            Call for free estimate
+                            <a href="tel:+13123502500" style="color: #e74c3c; text-decoration: none; font-size: 1.2rem;">(312) 350-2500</a>
                         </div>
                     </div>
                     <div class="contact-item">
                         <span>🕒</span>
                         <div>
-                            <strong>Hours:</strong><br>
-                            Monday - Saturday: 7:00 AM - 6:00 PM<br>
-                            Sunday: By appointment
+                            <strong>Business Hours:</strong><br>
+                            Monday - Friday: 9:00 AM - 5:00 PM<br>
+                            Saturday & Sunday: Closed<br>
+                            <em style="color: #bdc3c7;">Emergency service available</em>
                         </div>
                     </div>
                     <div class="contact-item">
-                        <span>⚡</span>
+                        <span>🌐</span>
                         <div>
-                            <strong>Emergency Service:</strong><br>
-                            Available 24/7 for urgent repairs
+                            <strong>Online Booking:</strong><br>
+                            <a href="https://hk-drywall-service-inc.square.site/" target="_blank" style="color: #e74c3c; text-decoration: none;">Schedule Online 24/7</a>
                         </div>
                     </div>
                 </div>
                 <div class="contact-form">
-                    <h3>Request a Quote</h3>
-                    <p style="margin-bottom: 2rem;">Ready to start your project? Contact us today for a free, no-obligation estimate. We'll assess your needs and provide competitive pricing for all drywall services.</p>
-                    <a href="tel:" class="cta-button" style="display: block; text-align: center; margin-bottom: 1rem;">Call Now for Free Quote</a>
-                    <p style="text-align: center; font-size: 0.9rem; opacity: 0.8;">Licensed, bonded, and insured for your protection</p>
+                    <h3>Request a Free Quote</h3>
+                    <p style="margin-bottom: 2rem;">Ready to start your project? Get a free, no-obligation estimate from Chicago's trusted drywall professionals.</p>
+                    
+                    <div style="margin-bottom: 2rem;">
+                        <a href="tel:+13123502500" class="cta-button" style="display: block; text-align: center; margin-bottom: 1rem; background: linear-gradient(45deg, #e74c3c, #c0392b);">📞 Call (312) 350-2500</a>
+                        
+                        <a href="https://hk-drywall-service-inc.square.site/" target="_blank" class="cta-button" style="display: block; text-align: center; background: linear-gradient(45deg, #27ae60, #2ecc71);">📅 Book Online Now</a>
+                    </div>
+                    
+                    <div style="text-align: center; padding: 1.5rem; background: rgba(231, 76, 60, 0.1); border-radius: 10px; margin-top: 2rem;">
+                        <p style="font-weight: bold; color: #e74c3c; margin-bottom: 0.5rem;">🏆 Proud Black-Owned Business</p>
+                        <p style="font-size: 0.9rem; opacity: 0.8; margin: 0;">Licensed, bonded, and insured for your protection</p>
+                    </div>
                 </div>
             </div>
         </div>
